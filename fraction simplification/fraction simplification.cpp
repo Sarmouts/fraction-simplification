@@ -16,7 +16,7 @@ string simplification(double num, double den)
 	{
 		if (num < 0 && den < 0) return to_string(-num) + "/" + to_string(-den);
 		else if (num > 0 && den > 0) return to_string(num) + "/" + to_string(den);
-		else return "-" + to_string(num) + "/" + to_string(den);
+		else return "-" + to_string(abs(num)) + "/" + to_string(abs(den));
 	}
 	else
 	{

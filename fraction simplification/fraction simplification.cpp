@@ -10,7 +10,13 @@ string simplification(double num, double den)
 {
 	if (num / den == round(num / den))
 	{
-		return to_string(num / den);
+		return to_string(static_cast<int>(num / den));
+	}
+	else if (num != round(num) || den != round(den))
+	{
+		if (num < 0 && den < 0) return to_string(-num) + "/" + to_string(-den);
+		else if (num > 0 && den > 0) return to_string(num) + "/" + to_string(den);
+		else return "-" + to_string(num) + "/" + to_string(den);
 	}
 	else
 	{
@@ -20,15 +26,15 @@ string simplification(double num, double den)
 			MKD = abs(num) - abs(den);
 			if (num / MKD != round(num / MKD) || den / MKD != round(den / MKD))
 			{
-				if (num < 0 && den < 0) return to_string(-num) + "/" + to_string(-den);
-				else if (num > 0 && den > 0) return to_string(num) + "/" + to_string(den);
-				else return "-" + to_string(num) + "/" + to_string(den);
+				if (num < 0 && den < 0) return to_string(static_cast<int>(-num)) + "/" + to_string(static_cast<int>(-den));
+				else if (num > 0 && den > 0) return to_string(static_cast<int>(num)) + "/" + to_string(static_cast<int>(den));
+				else return "-" + to_string(static_cast<int>(num)) + "/" + to_string(static_cast<int>(den));
 			}
 			else
 			{
-				if (num < 0 && den < 0) return to_string(-num / MKD) + "/" + to_string(-den / MKD);
-				else if (num > 0 && den > 0) return to_string(num / MKD) + "/" + to_string(den / MKD);
-				else return "-" + to_string(num / MKD) + "/" + to_string(den / MKD);
+				if (num < 0 && den < 0) return to_string(static_cast<int>(-num / MKD)) + "/" + to_string(static_cast<int>(-den / MKD));
+				else if (num > 0 && den > 0) return to_string(static_cast<int>(num / MKD)) + "/" + to_string(static_cast<int>(den / MKD));
+				else return "-" + to_string(static_cast<int>(num / MKD)) + "/" + to_string(static_cast<int>(den / MKD));
 			}
 		}
 		else
@@ -36,15 +42,15 @@ string simplification(double num, double den)
 			MKD = abs(den) - abs(num);
 			if (num / MKD != round(num / MKD) || den / MKD != round(den / MKD))
 			{
-				if (num < 0 && den < 0) return to_string(-num) + "/" + to_string(-den);
-				else if (num > 0 && den > 0) return to_string(num) + "/" + to_string(den);
-				else return "-" + to_string(num) + "/" + to_string(den);
+				if (num < 0 && den < 0) return to_string(static_cast<int>(-num)) + "/" + to_string(static_cast<int>(-den));
+				else if (num > 0 && den > 0) return to_string(static_cast<int>(num)) + "/" + to_string(static_cast<int>(den));
+				else return "-" + to_string(static_cast<int>(num)) + "/" + to_string(static_cast<int>(den));
 			}
 			else
 			{
-				if (num < 0 && den < 0) return to_string(-num / MKD) + "/" + to_string(-den / MKD);
-				else if (num > 0 && den > 0) return to_string(num / MKD) + "/" + to_string(den / MKD);
-				else return "-" + to_string(num / MKD) + "/" + to_string(den / MKD);
+				if (num < 0 && den < 0) return to_string(static_cast<int>(-num / MKD)) + "/" + to_string(static_cast<int>(-den / MKD));
+				else if (num > 0 && den > 0) return to_string(static_cast<int>(num / MKD)) + "/" + to_string(static_cast<int>(den / MKD));
+				else return "-" + to_string(static_cast<int>(num / MKD)) + "/" + to_string(static_cast<int>(den / MKD));
 			}
 		}
 	}
@@ -63,5 +69,6 @@ int main()
 		cout << "Enter denominator y" << endl;
 		cin >> y;
 		cout << simplification(x, y) << endl;
+		cout << "===================" << endl;
 	}
 }

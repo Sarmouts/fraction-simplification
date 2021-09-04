@@ -42,18 +42,9 @@ string simplification(double num, double den)
 				y %= abs(x);
 			}
 		}
-		if (MKD == 1)
-		{
-			if (num < 0 && den < 0) return to_string(static_cast<int>(-num)) + "/" + to_string(static_cast<int>(-den));
-			else if (num > 0 && den > 0) return to_string(static_cast<int>(num)) + "/" + to_string(static_cast<int>(den));
-			else return "-" + to_string(static_cast<int>(abs(num))) + "/" + to_string(static_cast<int>(abs(den)));
-		}
-		else
-		{
-			if (num < 0 && den < 0) return to_string(static_cast<int>(-num / MKD)) + "/" + to_string(static_cast<int>(-den / MKD));
-			else if (num > 0 && den > 0) return to_string(static_cast<int>(num / MKD)) + "/" + to_string(static_cast<int>(den / MKD));
-			else return "-" + to_string(static_cast<int>(abs(num) / MKD)) + "/" + to_string(static_cast<int>(abs(den) / MKD));
-		}
+		if (num < 0 && den < 0) return to_string(static_cast<int>(-num / MKD)) + "/" + to_string(static_cast<int>(-den / MKD));
+		else if (num > 0 && den > 0) return to_string(static_cast<int>(num / MKD)) + "/" + to_string(static_cast<int>(den / MKD));
+		else return "-" + to_string(static_cast<int>(abs(num) / MKD)) + "/" + to_string(static_cast<int>(abs(den) / MKD));
 	}
 }
 int main()

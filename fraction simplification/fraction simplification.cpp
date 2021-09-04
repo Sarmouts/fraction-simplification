@@ -14,9 +14,7 @@ string simplification(double num, double den)
 	}
 	else if (num != round(num) || den != round(den))
 	{
-		if (num < 0 && den < 0) return to_string(-num) + "/" + to_string(-den);
-		else if (num > 0 && den > 0) return to_string(num) + "/" + to_string(den);
-		else return "-" + to_string(abs(num)) + "/" + to_string(abs(den));
+		return to_string(round(num / den));
 	}
 	else
 	{
@@ -71,7 +69,7 @@ int main()
 		cin >> x;
 		cout << "Enter denominator y" << endl;
 		cin >> y;
-		cout << simplification(x, y) << endl;
+		cout << x << "/" << y << " = " << simplification(x, y) << endl;
 		cout << "===================" << endl;
 	}
 }

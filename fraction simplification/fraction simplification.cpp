@@ -14,7 +14,7 @@ string simplification(double num, double den)
 	}
 	else if (num != round(num) || den != round(den))
 	{
-		return to_string(round(num / den));
+		return to_string(num / den) + " (" + to_string(static_cast<int>(round(num / den))) + ")";
 	}
 	else
 	{

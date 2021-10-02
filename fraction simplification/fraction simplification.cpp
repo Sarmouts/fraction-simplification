@@ -91,7 +91,15 @@ int main()
 		cin >> x;
 		cout << "Enter denominator y" << endl;
 		cin >> y;
-		cout << x << "/" << y << " = " << simplification(x, y) << endl;
-		cout << "===================" << endl;
+		if (y == 0)
+		{
+			cout << "The value of y mustn't be 0" << endl;
+			cout << "===================" << endl;
+		}
+		else
+		{
+			cout << x << "/" << y << " = " << simplification(x, y) << endl;
+			cout << "===================" << endl;
+		}
 	}
 }
